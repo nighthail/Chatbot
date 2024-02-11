@@ -7,3 +7,4 @@ To-do:
 Expand intents.json
 Save user information such as name etc
 Display user information in the "What I know about you"- section by the chatbot avatar
+No initial greeting displayed as of now
