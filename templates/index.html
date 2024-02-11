@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Chatbot</title>
+</head>
+<body>
+    <div class="container">
+        <div class="PresArea">
+            <img class="u-expanded-width u-image u-image-default u-image-1" src="static/images/avatar_mockup.png" alt="">
+            <div class="presFont">
+                <p>Hi, I’m Durian! I'm terminally online.</p><br>
+            </div>
+            <div id="testText">
+                <p>Here are a few things I know about you:</p>
+            </div>
+        </div>
+        <div class="chatbotArea">
+            <div id="wrapper">
+                <div id="chatbox"><div class="col-md-8 ml-auto mr-auto" id="chatWindow">
+
+                </div></div>
+                <p id="typingInd">Durian is Typing...</p>
+            </div>
+            <div id="wrapper2">
+                <div id="userInput" class="row">
+                    <div class="col-md-10">
+                        <form method="POST" action="/">
+                            <button type="submit" id="send" class="btn btn-warning">Send</button>
+                            <label for="text"></label><input id="text" type="text" name="msg" placeholder="Message" class="form-control" autocomplete="off" onclick="userMsg()">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $("form").on("submit", function(event) {
+            var rawText = $("#text").val();
+            var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+            $("#text").val("");
+            $("#chatbox").append(userHtml);
+            document.getElementById("userInput").scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+            });
+
+            $.ajax({
+                data: {
+                    msg: rawText,
+                },
+                type: "POST",
+                url: "/get",
+                success: function(data) {
+                    var randomNumber = Math.floor(Math.random() * 4) + 1;
+
+                    setTimeout(function () {
+                        var el = document.querySelector('#typingInd');
+                        el.style.setProperty('display', 'none', 'important');
+
+                        var botHtml = '<p class="botText"><img src="static/images/avatar.png" style="float: left; margin: -5px 15px 15px 0px;width: 10%;"><span>' + data + "</span></p><br>";
+                        $("#chatbox").append($.parseHTML(botHtml));
+                        document.getElementById("userInput").scrollIntoView({
+                            block: "start",
+                            behavior: "smooth",
+                        });
+                    }, randomNumber*1000);
+
+                    var el = document.querySelector('#typingInd');
+                    el.style.setProperty('display', 'block', 'important');
+                }
+            });
+
+            event.preventDefault();
+        })
+    });
+
+</script>
+
+</html>

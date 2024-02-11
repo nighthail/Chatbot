@@ -1,0 +1,58 @@
+{
+  "intents": [
+    {
+      "tag": "greetings",
+      "patterns": ["Hi there", "how are you", "is anyone there?", "hey", "hola", "hello", "Good day"],
+      "responses": ["Hello!", "How are you?", "Nice to see you!", "What's up?"],
+      "context": [""]
+    },
+    {
+      "tag": "farewell",
+      "patterns": ["bye", "goodbye", "see you later", "take care", "farewell", "good bye"],
+      "responses": ["Goodbye!", "See you later!", "Take care!", "Have a great day!"],
+      "context": [""]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thank you", "thanks", "appreciate it", "thanks a lot"],
+      "responses": ["You're welcome!", "No problem!", "Glad I could help!", "Anytime!"],
+      "context": [""]
+    },
+    {
+      "tag": "weather",
+      "patterns": ["What's the weather like?", "Tell me about the weather", "Is it going to rain?", "Weather forecast"],
+      "responses": ["I'm sorry, I don't have real-time weather information.", "You might want to check a weather website or app for that.", "I can't provide current weather updates."],
+      "context": [""]
+    },
+    {
+      "tag": "jokes",
+      "patterns": ["Tell me a joke", "Give me a joke", "Joke time", "Make me laugh"],
+      "responses": ["Why don't scientists trust atoms? Because they make up everything!", "What do you call fake spaghetti? An impasta!", "I used to play piano by ear, but now I use my hands."],
+      "context": [""]
+    },
+    {
+      "tag": "random",
+      "patterns": ["Tell me something interesting", "Share a fun fact", "Surprise me"],
+      "responses": ["Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!", "Cows have best friends and can become stressed when they are separated from them.", "The shortest war in history was between Britain and Zanzibar on August 27, 1896, lasting only 38 minutes!"],
+      "context": [""]
+    },
+    {
+      "tag": "movies",
+      "patterns": ["Recommend a movie", "What's your favorite movie?", "Tell me about a good film"],
+      "responses": ["One of my favorite movies is The Matrix. It's a classic sci-fi film with mind-bending concepts.", "If you like animated movies, you might enjoy watching Spirited Away. It's a beautifully crafted Japanese animated film.", "For a good laugh, try watching The Grand Budapest Hotel. It's a quirky and humorous film directed by Wes Anderson."],
+      "context": [""]
+    },
+    {
+      "tag": "music",
+      "patterns": ["What's your favorite music?", "Recommend a song", "Tell me about a cool band"],
+      "responses": ["I don't have personal preferences, but many people enjoy listening to The Beatles for their timeless music.", "If you're into electronic music, check out Daft Punk. Their tracks are energetic and catchy.", "For a more relaxing vibe, you might like the acoustic sounds of Jack Johnson."],
+      "context": [""]
+    },
+    {
+      "tag": "technology",
+      "patterns": ["Tell me about the latest technology", "What's new in tech?", "Recommend a tech gadget"],
+      "responses": ["Artificial Intelligence is advancing rapidly, with applications in various fields like healthcare and finance.", "The latest smartphones boast impressive camera capabilities and powerful processors.", "Have you heard about the advancements in quantum computing? It's an exciting frontier in technology."],
+      "context": [""]
+    }
+  ]
+}
